@@ -272,7 +272,6 @@ private extension PullToRefresh {
             return
         }
         
-        scrollView.contentOffset = previousScrollViewOffset
         scrollView.bounces = false
         UIView.animate(
             withDuration: 0.3,
