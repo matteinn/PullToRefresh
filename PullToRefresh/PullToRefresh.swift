@@ -145,7 +145,7 @@ extension PullToRefresh {
             var offset: CGFloat
             switch position {
             case .top:
-                offset = previousScrollViewOffset.y + scrollViewDefaultInsets.top
+                offset = previousScrollViewOffset.y
                 
             case .bottom:
                 if scrollView!.contentSize.height > scrollView!.bounds.height {
@@ -322,7 +322,7 @@ private extension PullToRefresh {
     var isCurrentlyVisible: Bool {
         guard let scrollView = scrollView else { return false }
         
-        return scrollView.normalizedContentOffset.y <= -scrollViewDefaultInsets.top
+        return scrollView.normalizedContentOffset.y <= 0
     }
     
     func bringRefreshViewToSuperview() {
